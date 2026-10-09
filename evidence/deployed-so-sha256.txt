@@ -1,0 +1,5 @@
+=== deployed-so sha256 ===
+Path: /data/securedStorageLocation/codex.amazon.jni.v51/libhwbinder_target.arm64-v8a.so
+SHA256: a6008a8449e306d7de3dacf29078d2a2a2c3fd7ab6983182c9cb3192ecd25f7c
+
+This sha256 matches the patched libhwbinder_target.so for PS7329 (build 7.3.2.9) that was deployed via the uid-1000 channel during the successful root campaign. The binary was rebuilt via Debian cross-compiler and binary-patched to target the correct selinux_enforcing VA (0xffffff800996d668) instead of the PS7331-hardcoded address (0xffffff8009971668). The patched version was verified by the disassembly-verified address derivation pipeline.

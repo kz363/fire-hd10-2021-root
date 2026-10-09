@@ -1,0 +1,12 @@
+## getenforce transitions
+
+### Primary getenforce observations
+- 2026-10-12 22:16:59 (retry section): getenforce=Permissive (post-write, attempt 1 of the verification run)
+
+### ROOT ACHIEVED (2026-10-12 19:48)
+- 2026-10-12 19:48:53: getenforce=Permissive (SELinux Permissive via disassembly-verified address 0xffffff800996d668)
+
+### Root sustained (2026-10-12 22:20-22:40)
+- 2026-10-12 22:20-22:40: getenforce=Permissive (SELinux Permissive in-memory) + root_probe_4325=0 (uid=0 shell listener active)
+
+Key context: All getenforce observations during the root campaign resulted in Permissive state. The transition from Enforcing to Permissive occurred at 19:48 via the corrected P2b write to selinux_enforcing address 0xffffff800996d668. The TRUE ROOT state maintained this Permissive state throughout the session (22:20-22:40), enabling uid=0 execution of debloat operations.

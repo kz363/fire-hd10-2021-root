@@ -1,0 +1,15 @@
+# Transcript from the author's campaign automation (pre-publication version of the chain, same upstream SnuSnuRoot primitives).
+# The public root-firehd10.sh in this repo reimplements the same flow with its own log prefix ([root ...]).
+# Win marker here (RETRY_LOOP_WIN) corresponds to ROOT_WIN in the public script.
+
+[retry 22:15:38] === attempt 1/3 ===
+[retry 22:15:38] staging waiter (consumes this boot one-shot)
+[retry 22:15:43] armed on channel attempt 1 — rebooting IMMEDIATELY (b fires 30s after parse; must not fire on this staging boot)
+[retry 22:16:48] boot ok; spawning carrier
+[retry 22:16:55] carrier PONG; leak
+[retry 22:16:57] leak: HWBINDER_STATEFUL result=0x5000000000000000 file=0x4444444444444444 node=0x2e24
+[retry 22:16:57] LEAK CONFIRMED - running write
+[retry 22:16:57] write: HWBINDER_STATEFUL_WRITE result=0x5100000000000000
+[retry 22:16:59] getenforce=Permissive
+[retry 22:16:59] root_probe_4325=0
+RETRY_LOOP_WIN attempt=1

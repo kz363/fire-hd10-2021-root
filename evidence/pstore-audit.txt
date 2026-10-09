@@ -1,0 +1,6 @@
+=== pstore ramoops kernel-fault audit 2026-10-12 (read via uid-0 root listener on 4325) ===
+pstore files: console-ramoops (264139 bytes), pmsg-ramoops-0
+grep pattern: 'Kernel panic|Oops|Unable to handle kernel|BUG: kernel'
+EXACT MATCHES (full lines):
+[  981.340150]  (4)[1:init]ramoops ramoops: shutdown
+ANALYSIS: the single match is '[init]ramoops ramoops: shutdown' — an init INFO message, NOT a kernel fault. Zero actual kernel panics/faults recorded across the entire campaign.
