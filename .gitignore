@@ -1,0 +1,7 @@
+system-apks-backup.tar.gz
+root-run.log
+.DS_Store
+*.swp
+*~
+*.bak
+__pycache__/
