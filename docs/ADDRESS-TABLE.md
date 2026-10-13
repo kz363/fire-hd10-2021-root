@@ -14,6 +14,12 @@ from the **code that writes the variable**.
 | **7.3.2.9** | **PS7329.3842N** | **`0xffffff800996d668`** | disassembly of `enforcing_setup` (this repo); validated by the runtime oracle (write → `getenforce=Permissive`, 2-for-2 boots) | ✅ full chain |
 | 7.3.3.1 | PS7331.4460N | `0xffffff8009971668` | hardcoded in upstream SnuSnuRoot binaries — author-verified upstream (method not documented in their repo) | ✅ upstream |
 
+Per-build evidence subdirectories under `docs/<BuildID>-evidence/` are the
+scaling pattern for this table: the table stays a summary index; full
+disassemblies, logs, and sha256s live in each build's evidence dir. If the
+table exceeds ~10 rows, migrate it to a JSON/YAML manifest generated from the
+evidence dirs.
+
 > ⚠️ **Informational only — do NOT extrapolate.** A constant `+0x4000` delta
 > happens to align across PS7326 → PS7329 → PS7331 for `selinux_enforcing`, but
 > **`.bss` variable layout is not a linear function of build number**: adding new
@@ -42,7 +48,8 @@ curl -L -o ota.bin "<the url>"
 # 2. It's a zip: extract the boot image
 python3 -c "import zipfile; zipfile.ZipFile('ota.bin').extract('boot.img')"
 
-# 3. The kernel is gzip'd at offset 0x800; decompress to the raw arm64 Image
+# 3. The kernel is gzip'd at offset 0x800 (AOSP mkbootimg convention: one page
+#    header + kernel at page 2); decompress to the raw arm64 Image
 python3 - <<'EOF'
 import zlib
 data = open('boot.img','rb').read()
