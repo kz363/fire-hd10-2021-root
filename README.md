@@ -1,4 +1,4 @@
-# Rooting the Amazon Fire HD 10 (2021) — PS7329.3842N verified
+# Rooting the Amazon Fire HD 10 (2021) — PS7329.3842N
 
 **Device:** Fire HD 10 (2021, 11th gen) `trona` / KFTRWI, Fire OS **7.3.2.9** (build `PS7329.3842N`, 2024-01-19 — the firmware present on the verified device; newer builds exist, see docs/ADDRESS-TABLE.md), Android 9, kernel 4.4.146 aarch64, MediaTek MT8183, bootloader locked.
 
