@@ -22,8 +22,11 @@ ro.treble.enabled = true              (irrelevant without unlock)
 Mali UAPI = 11.11 (G72, r14p0)
 ```
 
-`PS7329.3842N` is the final firmware Amazon shipped for this model (no newer OTA
-exists; the 2024-01 build postdates the 2023-08 patch level).
+`PS7329.3842N` is the firmware present on the test device. Per fireos-archive
+(data/Fire_HD_10_Gen_11/), the model has newer builds: a later 7.3.2.9 incremental
+(3851) and 7.3.3.1 (4463 — verified separately in the upstream SnuSnuRoot repo).
+This report covers only 3842N; do not assume address portability to other builds,
+including other 7.3.2.x incrementals.
 
 ## Chain verification, per link
 
